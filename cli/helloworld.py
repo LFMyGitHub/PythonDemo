@@ -61,4 +61,28 @@ print(len(b'ABC'))
 print('%2d-%02d'%(2,1))
 print('%.2f'%3.14156)
 
-input('\n\n按下enter退出')
+#有序集合list,索引从0开始
+list = ['xiaoming','sanmao','shazi']
+print(list[0])
+print(list)
+#使用len()获得list元素个数
+print(len(list))
+#可直接用-1获取最后一个索引(倒推)
+print(list[-1])
+list.append('addmode')
+print(list)
+#插入数据到指定索引位置
+list.insert(1,'sierge')
+print(list)
+#删除末尾元素pop(),删除指定元素pop(i)
+list.pop()
+print(list)
+list.pop(3)
+print(list)
+#替换元素，直接赋值
+list[1] = 'tihuan'
+print(list)
+
+#有序列表tuple(元组),一旦初始化不可更改(指向对象不可变,指向对象本身可变))
+
+#input('\n\n按下enter退出')
