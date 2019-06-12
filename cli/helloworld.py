@@ -85,4 +85,64 @@ print(list)
 
 #有序列表tuple(元组),一旦初始化不可更改(指向对象不可变,指向对象本身可变))
 
+#条件判断
+name = int(input('请输入你的年龄'))
+if name<18:
+  print('未成年')
+else:
+  print('黄花大闺女')
+
+#for循环
+for name in list:
+  print(name)
+
+lists = range(5)
+print(lists)
+sum = 0
+for x in range(5):
+  sum = sum + x
+print(sum)
+
+#while循环
+sum = 0
+n = 5
+while n > 0:
+  sum = sum + n
+  n = n - 2
+print(sum)
+
+#break
+n = 1
+while n <= 100:
+  if n > 10: # 当n = 11时，条件满足，执行break语句
+    break # break语句会结束当前循环
+  print(n)
+  n = n + 1
+
+#continue
+n = 0
+while n < 10:
+  n = n + 1
+  if n % 2 == 0: # 如果n是偶数，执行continue语句
+    continue # continue语句会直接继续下一轮循环，后续的print()语句不会执行
+  print(n)
+
+#字典dict,set(非重复key的集合)
+d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
+print(d['Michael'])
+
+#汉诺塔
+def move(n, a, b, c):
+  while n > 1:
+    if n%2 != 0:
+      print(a, '-->', c)
+      n = n - 1
+    else:
+      print(a, '-->', b)
+      print(c, '-->', b)
+      print(b, '-->', c)
+      n = n - 1
+
+
+move(3, 'A', 'B', 'C')
 #input('\n\n按下enter退出')
