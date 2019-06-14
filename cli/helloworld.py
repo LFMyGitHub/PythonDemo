@@ -145,4 +145,54 @@ def move(n, a, b, c):
 
 
 move(3, 'A', 'B', 'C')
+
+#切片
+print(list[:3])
+print(list[1:3])
+print(list[-2:])
+print(list[-2:-1])
+
+#自定义字符串去空格方法
+def trim(s):
+  if len(s)==0:
+    return s
+  elif s[0]==' ':
+    return trim(s[1:])
+  elif s[-1]==' ':
+    return trim(s[:-1])
+  return s
+print(trim('    dsfsd     '))
+
+#迭代
+from collections import Iterable
+print(isinstance('abc',Iterable))
+print(isinstance(123,Iterable))
+
+for i, value in enumerate(['A','B','C','D']):
+  print(i,value)
+
+#查找一个list中最小和最大值
+def findMinAndMax(L):
+  min = L[0]
+  max = L[0]
+  for i in L:
+    if i < min:
+      min = i
+    if i > max:
+      max = i
+  return (min, max)
+print(findMinAndMax([1,2,3,4,5,6,7,8,50,11,15,10,-5]))
+
+#列表生成式
+print([x * x for x in range(1, 11) if x % 2 == 0])
+print([m + n + z for m in 'ABC' for n in 'XYZ' for z in '123'])
+#列出当前目录下的所有文件和目录名
+import os
+print([d for d in os.listdir('.')])
+d = {'x': 'A', 'y': 'B', 'z': 'C' }
+for k, v in d.items():
+  print(k, '=', v)
+
+L = ['Hello', 'World', 18, 'Apple', None]
+print([s.lower() for s in L if isinstance(s, str)]) 
 #input('\n\n按下enter退出')
