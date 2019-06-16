@@ -62,26 +62,26 @@ print('%2d-%02d'%(2,1))
 print('%.2f'%3.14156)
 
 #有序集合list,索引从0开始
-list = ['xiaoming','sanmao','shazi']
-print(list[0])
-print(list)
+list1 = ['xiaoming','sanmao','shazi']
+print(list1[0])
+print(list1)
 #使用len()获得list元素个数
-print(len(list))
+print(len(list1))
 #可直接用-1获取最后一个索引(倒推)
-print(list[-1])
-list.append('addmode')
-print(list)
+print(list1[-1])
+list1.append('addmode')
+print(list1)
 #插入数据到指定索引位置
-list.insert(1,'sierge')
-print(list)
+list1.insert(1,'sierge')
+print(list1)
 #删除末尾元素pop(),删除指定元素pop(i)
-list.pop()
-print(list)
-list.pop(3)
-print(list)
+list1.pop()
+print(list1)
+list1.pop(3)
+print(list1)
 #替换元素，直接赋值
-list[1] = 'tihuan'
-print(list)
+list1[1] = 'tihuan'
+print(list1)
 
 #有序列表tuple(元组),一旦初始化不可更改(指向对象不可变,指向对象本身可变))
 
@@ -93,7 +93,7 @@ else:
   print('黄花大闺女')
 
 #for循环
-for name in list:
+for name in list1:
   print(name)
 
 lists = range(5)
@@ -147,10 +147,10 @@ def move(n, a, b, c):
 move(3, 'A', 'B', 'C')
 
 #切片
-print(list[:3])
-print(list[1:3])
-print(list[-2:])
-print(list[-2:-1])
+print(list1[:3])
+print(list1[1:3])
+print(list1[-2:])
+print(list1[-2:-1])
 
 #自定义字符串去空格方法
 def trim(s):
@@ -194,5 +194,13 @@ for k, v in d.items():
   print(k, '=', v)
 
 L = ['Hello', 'World', 18, 'Apple', None]
-print([s.lower() for s in L if isinstance(s, str)]) 
+print([s.lower() for s in L if isinstance(s, str)])
+
+#首字母大写
+def normalize(name):
+  name=name[0].upper()+name[1:].lower()
+  return name
+L1 = ['adam', 'LISA', 'barT']
+L2 = list(map(normalize, L1))
+print(L2)
 #input('\n\n按下enter退出')
