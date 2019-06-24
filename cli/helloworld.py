@@ -147,6 +147,8 @@ def move(n, a, b, c):
 move(3, 'A', 'B', 'C')
 
 #切片
+#[::1]中省略起止位置，步进为1
+#python中步进为正，从左往右取，步进为负，从右往左取
 print(list1[:3])
 print(list1[1:3])
 print(list1[-2:])
@@ -203,4 +205,25 @@ def normalize(name):
 L1 = ['adam', 'LISA', 'barT']
 L2 = list(map(normalize, L1))
 print(L2)
+
+#filter
+def is_odd(n):
+  return n % 2 == 1
+print(list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15])))
+
+
+def is_palindrome(n):
+	return str(n)==str(n)[::-1]
+output=filter(is_palindrome, range(1,1001))
+print(list(output))
+
+#sorted排序
+print(sorted([36, 5, -12, 9, -21]))
+print(sorted([36, 5, -12, 9, -21], key=abs))
+
+def by_name(t):
+  return t[0]
+L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
+print(sorted(L, key=by_name))
+print(L)
 #input('\n\n按下enter退出')
